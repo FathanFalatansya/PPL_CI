@@ -34,6 +34,9 @@ $routes->set404Override();
 $routes->get('/', "c_Home::home");
 $routes->get('info', "c_Info::informasi");
 
+$routes->get('login', "c_login::index");
+$routes->post('login', "c_login::do_login");
+$routes->get('logout', "c_login::logout");
 
 $routes->get('/Mahasiswa', 'c_mahasiswa::view_mahasiswa_display');
 $routes->get('/Mahasiswa/Detail/(:num)', 'c_mahasiswa::detail_mahasiswa/$1');
