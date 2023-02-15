@@ -1,6 +1,12 @@
 <?= $this->extend('layouts/v_Template'); ?>
 <?= $this->section('content'); ?>
 
+
+    <h1>Data Mahasiswa</h1>
+        <form action="<?= base_url('/Mahasiswa') ?>" method="get">
+            <input type="search" name="keyword" placeholder="Masukkan Nama Mahasiswa" autofocus>
+            <button type="submit">Cari</button>
+        </form>
     <table border=15>
         <thead>
             <tr>

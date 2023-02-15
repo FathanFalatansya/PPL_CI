@@ -9,5 +9,6 @@
         <li>Umur : <?= $mahasiswa['Umur'] ?> </li>
     </ul>
 
+    <a href="/Mahasiswa"><button type="button">Kembali</button></a>
 
 <?= $this->endsection(); ?>

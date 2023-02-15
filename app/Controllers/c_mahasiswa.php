@@ -27,9 +27,11 @@ class c_mahasiswa extends BaseController
 
     public function view_mahasiswa_display()
     {
+        $keyword = $this->request->getVar('keyword') ? $this->request->getVar('keyword') : null;
+        $mahasiswa = $keyword ? $this->model->mahasiswaSearch($keyword) : $this->model->getAll();
         $model = new \App\Models\M_Mahasiswa;
         $data = [
-            'mahasiswa' => $model->getAll(),
+            'mahasiswa' => $mahasiswa,
             'title' => 'Data Mahasiswa'
         ];
         return view('v_mahasiswa_display',$data);

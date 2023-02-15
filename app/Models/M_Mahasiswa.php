@@ -41,4 +41,11 @@ class M_Mahasiswa extends Model
 
         return $data-> getRowArray();
     }
+
+    public function mahasiswaSearch($keyword)
+    {
+        $data = $this->db->query("SELECT * FROM {$this->table} WHERE nim LIKE '%{$keyword}%' OR nama LIKE '%{$keyword}%' OR umur LIKE '%{$keyword}%'");
+        $this->db->close();
+        return $data->getResultArray();
+    }
 }
