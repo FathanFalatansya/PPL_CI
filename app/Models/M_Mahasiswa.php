@@ -49,9 +49,9 @@ class M_Mahasiswa extends Model
         return $data->getResultArray();
     }
 
-    public function mahasiswa_update($data)
+    public function mahasiswa_update($data, $Nim)
     {
-        $sql = "UPDATE mahasiswa SET Nama = '{$data['Nama']}', Umur = '{$data['Umur']}' WHERE Nim = '{$data['Nim']}'";
+        $sql = "UPDATE mahasiswa SET Nim = '{$data['Nim']}', Nama = '{$data['Nama']}', Umur = '{$data['Umur']}' WHERE Nim = '{$Nim}'";
 
         $data = $this->db->query($sql);
 

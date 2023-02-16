@@ -71,10 +71,10 @@ class c_mahasiswa extends BaseController
 
             'Nama' => [
                 'label' => 'Nama',
-                'rules' => 'required|alpha',
+                'rules' => 'required|alpha_numeric_space',
                 'errors' => [
                     'required' => '{field} harus diisi',
-                    'alpha' => '{field} harus berupa huruf'
+                    'alpha_numeric_space' => '{field} harus berupa huruf'
                 ]
             ],
             'Umur' => [
@@ -104,12 +104,24 @@ class c_mahasiswa extends BaseController
     public function update($Nim)
     {
         if (!$this->validate([
+            'Nim' => [
+                'label' => 'NIM',
+                'rules' => 'required|numeric|min_length[9]|max_length[9]|is_unique[mahasiswa.Nim,Nim,' . $Nim . ']',
+                'errors' => [
+                    'required' => '{field} harus diisi',
+                    'numeric' => '{field} harus berupa angka',
+                    'min_length' => '{field} harus berjumlah 9 karakter',
+                    'max_length' => '{field} harus berjumlah 9 karakter',
+                    'is_unique' => '{field} Sudah Digunakan'
+                ]
+            ],
+
             'Nama' => [
                 'label' => 'Nama',
-                'rules' => 'required|alpha',
+                'rules' => 'required|alpha_numeric_space',
                 'errors' => [
                     'required' => '{field} Tidak Boleh Kosong',
-                    'alpha' => '{field} harus berupa huruf'
+                    'alpha_numeric_space' => '{field} harus berupa huruf'
                 ]
             ],
             'Umur' => [
@@ -128,12 +140,12 @@ class c_mahasiswa extends BaseController
             ]);
         }
         $data = [
-            'Nim' => $Nim,
+            'Nim' => $this->request->getPost('Nim'),
             'Nama' => $this->request->getPost('Nama'),
             'Umur' => $this->request->getPost('Umur')
         ];
 
-        $this->model->mahasiswa_update($data);
+        $this->model->mahasiswa_update($data, $Nim);
         session()->setFlashdata('Pesan', 'Data berhasil di update!');
         return redirect()->to('/Mahasiswa');
     }

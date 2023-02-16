@@ -11,17 +11,25 @@
                 </div>
             <?php endif; ?>
             <form action="/login" method="post">
-            <label>Username:</label>
-            <input type="text" name="username" required>
+                <table>
+                    <tr>
+                        <td>Username</td>
+                        <td>:</td>
+                        <td><input type="text" name="username" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>:</td>
+                        <td><input type="password" name="password" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><button type="submit">Login</button></td>
+                    </tr>
+                </table>
             
-            <br><br>
-            
-            <label>Password:</label>
-            <input type="password" name="password" required>
-            
-            <br><br>
-            
-            <button type="submit">Login</button>
+      
    
     <?php endif; ?>
 

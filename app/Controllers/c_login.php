@@ -29,7 +29,7 @@ use App\Controllers\BaseController;
                 return redirect()->to('/');
             } else {
                 // Jika login gagal, tampilkan pesan error
-                return redirect()->to('/login')->with('error', 'Email atau Password salah');
+                return redirect()->to('/login')->with('error', 'Username atau Password salah');
             }
         }
 

@@ -18,7 +18,7 @@
             <tr>
                 <td>NIM</td>
                 <td>:</td>
-                <td><input type="text" name="Nim" value="<?= $mahasiswa['Nim'] ?>" readonly></td>
+                <td><input type="text" name="Nim" value="<?= $mahasiswa['Nim'] ?>"></td>
             </tr>
             <tr>
                 <td>Nama</td>
@@ -36,8 +36,7 @@
                 <td></td>
                 <td></td>
                 <td><button type="submit">Simpan</button>
-                    <a href="/Mahasiswa"><button type="button">Kembali</button></a>
-                </td>
+                <a href="/Mahasiswa"><button type="button">Kembali</button></a></td>
                 
             </tr>
         </table>
