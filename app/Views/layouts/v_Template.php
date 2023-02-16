@@ -24,6 +24,7 @@
                         <a href="/"><button type="button">Home</button></a>
                         <a href="/info"><button type="button">Info</button></a>
                         <a href="/Mahasiswa"><button type="button">Data Mahasiswa</button></a>
+                        <a href="/Pegawai"><button type="button">Data Pegawai</button></a>
                         <?php if (session()->get('isLoggedIn')): ?>
                             <!-- Tampilkan button untuk session yang aktif -->
                             <a href="/logout"><button type="button">Logout</button></a>

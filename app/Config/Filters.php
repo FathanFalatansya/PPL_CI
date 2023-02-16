@@ -66,6 +66,8 @@ class Filters extends BaseConfig
             'before' => [
                 'Mahasiswa',
                 'Mahasiswa/*',
+                'Pegawai',
+                'Pegawai/*',
             ],
         ]
     ];

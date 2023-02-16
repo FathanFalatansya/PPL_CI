@@ -38,6 +38,7 @@ $routes->get('login', "c_login::index");
 $routes->post('login', "c_login::do_login");
 $routes->get('logout', "c_login::logout");
 
+// Route Mahasiswa
 $routes->get('/Mahasiswa', 'c_mahasiswa::view_mahasiswa_display');
 $routes->get('/Mahasiswa/Detail/(:num)', 'c_mahasiswa::detail_mahasiswa/$1');
 $routes->get('/Mahasiswa/Create', 'c_mahasiswa::create');
@@ -45,6 +46,16 @@ $routes->get('/Mahasiswa/Edit/(:num)', 'c_mahasiswa::edit/$1');
 $routes->post('/Mahasiswa/Update/(:num)', 'c_mahasiswa::update/$1');
 $routes->get('/Mahasiswa/Delete/(:num)', 'c_mahasiswa::delete/$1');
 $routes->post('/Mahasiswa/Store', 'c_mahasiswa::store');
+
+// Route Pegawai
+$routes->get('/Pegawai', 'c_pegawai::view_pegawai_display');
+$routes->get('/Pegawai/Create', 'c_pegawai::create');
+$routes->get('/Pegawai/Detail/(:num)', 'c_pegawai::detail_pegawai/$1');
+$routes->get('/Pegawai/Edit/(:num)', 'c_pegawai::edit/$1');
+$routes->post('/Pegawai/Update/(:num)', 'c_pegawai::update/$1');
+$routes->post('/Pegawai/Store', 'c_pegawai::store');
+$routes->get('/Pegawai/Delete/(:num)', 'c_pegawai::delete/$1');
+
 
 /*
  * --------------------------------------------------------------------
