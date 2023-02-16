@@ -33,7 +33,8 @@ class c_pegawai extends BaseController
             $data = [
                 'pegawai' => $pegawai,
                 'title' => 'Data Pegawai',
-                'notfound' => 'Data tidak ditemukan'
+                'notfound' => 'Data tidak ditemukan',
+                'nodata' => 'Belum ada data'
             ];
         } else {
             $data = [
@@ -49,7 +50,7 @@ class c_pegawai extends BaseController
         if (!$this->validate([
             'Nim' => [
                 'label' => 'NIM',
-                'rules' => 'required|numeric|min_length[9]|max_length[9]|is_unique[mahasiswa.Nim]',
+                'rules' => 'required|numeric|min_length[9]|max_length[9]|is_unique[pegawai.Nim]',
                 'errors' => [
                     'required' => '{field} harus diisi',
                     'numeric' => '{field} harus berupa angka',

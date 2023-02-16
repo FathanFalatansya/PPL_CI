@@ -8,7 +8,11 @@
         </form>
 
     <br/>
-
+        <?php if (isset($nodata)): ?>
+                <div style="background-color: red; color: white; padding: 10px; width: 220px; margin-bottom: 10px; border-radius: 5%;">
+                    <?= $nodata ?>
+                </div>
+        <?php else: ?>
     <table border=15>
         <thead>
             <tr>
@@ -46,8 +50,9 @@
                     <?php endforeach; ?>
                 </tbody>
             <?php endif; ?>
-
-    </table>
+        </table>
+    <?php endif; ?>
+    
 
     </br>
     <a href="/Pegawai/Create"><button type="button">Tambah Data</button></a>
