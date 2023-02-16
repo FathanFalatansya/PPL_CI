@@ -27,7 +27,7 @@
             <td>Gender:</td>
             <td>
                 <input type="radio" name="Gender" value="Pria" <?= ($pegawai['Gender'] == 'Pria') ? 'checked' : '' ?>>Pria
-                <input type="radio" name="Gender" value="Wanita" <?= ($pegawai['Gender'] == 'Pria') ? 'checked' : '' ?>>Wanita
+                <input type="radio" name="Gender" value="Wanita" <?= ($pegawai['Gender'] == 'Wanita') ? 'checked' : '' ?>>Wanita
             </td>
             </tr>
             <tr>
