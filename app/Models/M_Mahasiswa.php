@@ -48,4 +48,22 @@ class M_Mahasiswa extends Model
         $this->db->close();
         return $data->getResultArray();
     }
+
+    public function mahasiswa_update($data)
+    {
+        $sql = "UPDATE mahasiswa SET Nama = '{$data['Nama']}', Umur = '{$data['Umur']}' WHERE Nim = '{$data['Nim']}'";
+
+        $data = $this->db->query($sql);
+
+        return $data;
+    }
+
+    public function mahasiswa_delete($Nim)
+    {
+        $sql = "DELETE FROM mahasiswa WHERE Nim = '{$Nim}'";
+
+        $data = $this->db->query($sql);
+
+        return $data;
+    }
 }

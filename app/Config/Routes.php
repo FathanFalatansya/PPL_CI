@@ -41,6 +41,9 @@ $routes->get('logout', "c_login::logout");
 $routes->get('/Mahasiswa', 'c_mahasiswa::view_mahasiswa_display');
 $routes->get('/Mahasiswa/Detail/(:num)', 'c_mahasiswa::detail_mahasiswa/$1');
 $routes->get('/Mahasiswa/Create', 'c_mahasiswa::create');
+$routes->get('/Mahasiswa/Edit/(:num)', 'c_mahasiswa::edit/$1');
+$routes->post('/Mahasiswa/Update/(:num)', 'c_mahasiswa::update/$1');
+$routes->get('/Mahasiswa/Delete/(:num)', 'c_mahasiswa::delete/$1');
 $routes->post('/Mahasiswa/Store', 'c_mahasiswa::store');
 
 /*

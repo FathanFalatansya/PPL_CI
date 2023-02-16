@@ -16,7 +16,7 @@
                 <th>Nim</th> 
                 <th>Nama</th>
                 <th>Umur</th>
-                <th>Detail</th>
+                <th>Aksi</th>
                
             </tr>
         </thead>
@@ -33,7 +33,13 @@
                                 <td><?= $mhs['Nim']; ?></td>
                                 <td><?= $mhs['Nama']; ?></td>
                                 <td><?= $mhs['Umur']; ?></td>
-                                <td><a href="/Mahasiswa/Detail/<?= $mhs['Nim'] ?>">Detail</a></td>
+                                <td>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="/Mahasiswa/Detail/<?= $mhs['Nim'] ?>"><button type="button">Detail<button></a>
+                                    <a href="/Mahasiswa/Edit/<?= $mhs['Nim'] ?>"><button type="button">Edit<button></a>
+                                    <a href="/Mahasiswa/Delete/<?= $mhs['Nim'] ?>"><button type="button">Delete<button></a>
+                                </td>
+                            
                             </tr>
                         <?php endforeach; ?>
                 

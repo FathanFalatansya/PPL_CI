@@ -98,4 +98,55 @@ class c_mahasiswa extends BaseController
         $this->model->mahasiswa_store($data);
         return redirect()->to('/Mahasiswa');
     }
+
+    public function update($Nim)
+    {
+        if (!$this->validate([
+            'Nama' => [
+                'label' => 'Nama',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} harus diisi'
+                ]
+            ],
+            'Umur' => [
+                'label' => 'Umur',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} harus diisi',
+                    'numeric' => '{field} harus berupa angka'
+                ]
+            ]
+        ])) {
+            return view('Mahasiswa/v_mahasiswa_edit', [
+                'errors' => $this->validator->getErrors(),
+                'title' => 'Update Mahasiswa Error !'
+            ]);
+        }
+        $data = [
+            'Nim' => $Nim,
+            'Nama' => $this->request->getPost('Nama'),
+            'Umur' => $this->request->getPost('Umur')
+        ];
+
+        $this->model->mahasiswa_update($data);
+        return redirect()->to('/Mahasiswa');
+    }
+
+    public function edit($Nim)
+    {
+        $model = new \App\Models\M_Mahasiswa;
+        $data = [
+            'mahasiswa' => $model->get_mahasiswa($Nim),
+            'title' => 'Edit Data Mahasiswa'
+        ];
+        return view('Mahasiswa/v_mahasiswa_edit',$data);
+    }
+
+    public function delete($Nim)
+    {
+        $this->model->mahasiswa_delete($Nim);
+        return redirect()->to('/Mahasiswa');
+    }
+
 }
