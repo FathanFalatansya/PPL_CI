@@ -37,7 +37,7 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <a href="/Mahasiswa/Detail/<?= $mhs['Nim'] ?>"><button type="button">Detail<button></a>
                                     <a href="/Mahasiswa/Edit/<?= $mhs['Nim'] ?>"><button type="button">Edit<button></a>
-                                    <a href="/Mahasiswa/Delete/<?= $mhs['Nim'] ?>"><button type="button">Delete<button></a>
+                                    <a href="/Mahasiswa/Delete/<?= $mhs['Nim'] ?>"><button type="button" onclick="return confirm('Apakah anda yakin ingin menghapus data?')">Delete<button></a>
                                 </td>
                             
                             </tr>

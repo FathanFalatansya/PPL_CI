@@ -68,11 +68,13 @@ class c_mahasiswa extends BaseController
                     'is_unique' => '{field} Sudah Digunakan'
                 ]
             ],
+
             'Nama' => [
                 'label' => 'Nama',
-                'rules' => 'required',
+                'rules' => 'required|alpha',
                 'errors' => [
-                    'required' => '{field} harus diisi'
+                    'required' => '{field} harus diisi',
+                    'alpha' => '{field} harus berupa huruf'
                 ]
             ],
             'Umur' => [
@@ -104,9 +106,10 @@ class c_mahasiswa extends BaseController
         if (!$this->validate([
             'Nama' => [
                 'label' => 'Nama',
-                'rules' => 'required',
+                'rules' => 'required|alpha',
                 'errors' => [
-                    'required' => '{field} harus diisi'
+                    'required' => '{field} Tidak Boleh Kosong',
+                    'alpha' => '{field} harus berupa huruf'
                 ]
             ],
             'Umur' => [
@@ -119,6 +122,7 @@ class c_mahasiswa extends BaseController
             ]
         ])) {
             return view('Mahasiswa/v_mahasiswa_edit', [
+                'mahasiswa' => $this->model->get_mahasiswa($Nim), 
                 'errors' => $this->validator->getErrors(),
                 'title' => 'Update Mahasiswa Error !'
             ]);
@@ -130,6 +134,7 @@ class c_mahasiswa extends BaseController
         ];
 
         $this->model->mahasiswa_update($data);
+        session()->setFlashdata('Pesan', 'Data berhasil di update!');
         return redirect()->to('/Mahasiswa');
     }
 
@@ -146,6 +151,7 @@ class c_mahasiswa extends BaseController
     public function delete($Nim)
     {
         $this->model->mahasiswa_delete($Nim);
+        session()->setFlashdata('Pesan', 'Data berhasil dihapus!');
         return redirect()->to('/Mahasiswa');
     }
 
