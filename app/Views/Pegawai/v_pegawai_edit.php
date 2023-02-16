@@ -51,7 +51,10 @@
         </table>
       <br>
       <input type="submit" value="Submit">
+      <a href="/Pegawai"><button type="button">Kembali</button></a>
     </form>
+
+   
   </body>
 
 <?= $this->endsection(); ?>
