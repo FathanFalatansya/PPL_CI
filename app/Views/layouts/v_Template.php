@@ -14,7 +14,7 @@
         <table border=3 width="100%" height="40px">
             <tr bgcolor="lightgreen">
                 <th colspan="2" >
-                    <h1>Selamat datang di <?= $title ?? "Tugas web PPL" ?></h1>
+                    <h1>&nbsp;Selamat datang di <?= $title ?? "Tugas web PPL" ?></h1>
                 </th>
             </tr>
         </table>

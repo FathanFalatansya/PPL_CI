@@ -12,7 +12,7 @@ use App\Controllers\BaseController;
         }
         
         public function index() {
-            return view('v_login');
+            return view('Auth/v_login');
         }
         
         public function do_login() {

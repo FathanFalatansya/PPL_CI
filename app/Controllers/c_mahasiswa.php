@@ -17,24 +17,31 @@ class c_mahasiswa extends BaseController
         $data = [
             'title' => 'Tambah Data Mahasiswa'
         ];
-        return view('v_mahasiswa_create', $data);
+        return view('Mahasiswa/v_mahasiswa_create', $data);
     }
 
     public function display()
     {
-         return view('view_mahasiswa');
+         return view('Mahasiswa/view_mahasiswa');
     }
 
     public function view_mahasiswa_display()
     {
         $keyword = $this->request->getVar('keyword') ? $this->request->getVar('keyword') : null;
         $mahasiswa = $keyword ? $this->model->mahasiswaSearch($keyword) : $this->model->getAll();
-        $model = new \App\Models\M_Mahasiswa;
-        $data = [
-            'mahasiswa' => $mahasiswa,
-            'title' => 'Data Mahasiswa'
-        ];
-        return view('v_mahasiswa_display',$data);
+        if (count($mahasiswa) == 0) {
+            $data = [
+                'mahasiswa' => $mahasiswa,
+                'title' => 'Data Mahasiswa',
+                'notfound' => 'Data tidak ditemukan'
+            ];
+        } else {
+            $data = [
+                'mahasiswa' => $mahasiswa,
+                'title' => 'Data Mahasiswa'
+            ];
+        }
+        return view('Mahasiswa/v_mahasiswa_display',$data);
     }
 
     public function detail_mahasiswa($Nim)
@@ -44,7 +51,7 @@ class c_mahasiswa extends BaseController
             'mahasiswa' => $model->get_mahasiswa($Nim),
             'title' => 'Detail Data Mahasiswa'
         ];
-        return view('v_mahasiswa_detail',$data);
+        return view('Mahasiswa/v_mahasiswa_detail',$data);
     }
 
     public function store()
@@ -77,7 +84,7 @@ class c_mahasiswa extends BaseController
                 ]
             ]
         ])) {
-            return view('v_mahasiswa_create', [
+            return view('Mahasiswa/v_mahasiswa_create', [
                 'errors' => $this->validator->getErrors(),
                 'title' => 'Store Mahasiswa Error !'
             ]);
