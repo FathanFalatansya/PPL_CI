@@ -56,6 +56,10 @@ $routes->post('/Pegawai/Update/(:num)', 'c_pegawai::update/$1');
 $routes->post('/Pegawai/Store', 'c_pegawai::store');
 $routes->get('/Pegawai/Delete/(:num)', 'c_pegawai::delete/$1');
 
+// Route Toko
+
+$routes->get('/Toko', 'c_toko::view_toko_display');
+
 
 /*
  * --------------------------------------------------------------------

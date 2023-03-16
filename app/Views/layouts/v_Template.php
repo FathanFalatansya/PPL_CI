@@ -32,7 +32,7 @@
                                         <a href="/Pegawai" class="dropdown-item">Data Pegawai</a>
                                     </div>
                                 </div>
-                                <a href="#" class="nav-item nav-link">Toko</a>
+                                <a href="/Toko" class="nav-item nav-link">Toko</a>
                             </div>
                             <div class="navbar-nav ms-auto">
                                 <?php if (session()->get('isLoggedIn')): ?>
