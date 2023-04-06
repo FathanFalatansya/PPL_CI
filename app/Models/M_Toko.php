@@ -20,4 +20,13 @@ class M_Toko extends Model
         $data = $this->db->query($sql);
         return $data-> getResultArray();
     }
+
+    public function getById($id)
+    {
+        $sql = "SELECT * FROM produk WHERE id_produk = ?";
+        $data = $this->db->query($sql, $id);
+        return $data->getRowArray();
+    }
+
+    
 }

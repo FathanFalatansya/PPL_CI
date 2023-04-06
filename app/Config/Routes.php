@@ -59,6 +59,10 @@ $routes->get('/Pegawai/Delete/(:num)', 'c_pegawai::delete/$1');
 // Route Toko
 
 $routes->get('/Toko', 'c_toko::view_toko_display');
+$routes->get('/Toko/add-to-cart/(:num)', 'c_toko::add_to_cart/$1');
+$routes->get('/Toko/remove-from-cart/(:num)', 'c_toko::remove_from_cart/$1');
+
+
 
 
 /*
